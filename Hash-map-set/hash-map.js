@@ -3,6 +3,8 @@
  * Time complexity:
  * - Best: O(1)
  * - Worst: O(n)
+ * 
+ * pre storing and then fetching
  */
 
 // JavaScript built-in function

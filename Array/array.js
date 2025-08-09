@@ -23,4 +23,11 @@ arr.map(x => x * 2);      // Create new array with doubled values
 arr.filter(x => x > 2);   // Filter values
 arr.reduce((a, b) => a + b);  // Sum of all
 
+// Transversing an array using while loop
 
+let array = [];
+let i;
+while(i < array.length){
+    console.log(arr[i]);
+    i++
+}
