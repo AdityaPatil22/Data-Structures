@@ -5,6 +5,27 @@
  * - Worst: O(n)
  * 
  * pre storing and then fetching
+ * 
+ * The Process of Storing a Key-Value Pair
+ * Step 1: Hashing the key
+ *    A hash function takes your key and turns it into a fixed-size integer (hash code).
+ *    Example: "name" → 43248293
+ * 
+ * Step 2: Finding the bucket
+ *    The hash code is converted into an array index (usually via % array_length).
+ *    Example: 43248293 % 16 = 5 → put it in bucket 5.
+ * 
+ * Step 3: Handling collisions
+ *    Different keys can end up in the same bucket. This is called a collision.
+ *    Common solutions:
+ *        Separate Chaining → each bucket is a linked list or tree that stores all colliding entries.
+ *        Open Addressing → find the next empty spot in the array.
+ * 
+ * The Process of Retrieving a Value
+ *    Take the key you want.
+ *    Hash it again → find the bucket.
+ *    Search inside the bucket for the exact key (needed in case of collisions).
+ *    Return the value
  */
 
 // JavaScript built-in function

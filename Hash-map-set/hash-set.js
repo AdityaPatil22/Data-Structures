@@ -7,6 +7,15 @@
  * values()
  * 
  * Time Complexity: O(1)
+ * 
+ * Adding an element
+ * Take the element → pass it through a hash function → get a hash code.
+ *    Example: "Aditya" → hash → 934857.
+ * Convert the hash code to an array index using modulo (%) with the capacity.
+ *    Example: 934857 % 16 = 9 → bucket 9.
+ * If bucket 9 is empty → place the element there.
+ * If bucket 9 has other elements (collision) → store in the same bucket (linked list or tree).
+ * If the element already exists in the bucket → do nothing (maintains uniqueness).
  */
 
 // Use JavaScript's Built-in Set

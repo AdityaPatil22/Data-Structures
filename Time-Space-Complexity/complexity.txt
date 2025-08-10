@@ -1,0 +1,110 @@
+# Time Complexity
+
+- Time Complexity is not the time taken to execute a program.
+- Function that gives us the relationship about how the time will grow as the input grows
+- How the runtime of an algorithm grows with the size of input n
+
+# Space Complexity
+
+- It is the total space taken by the algorithm plus the auxiliary space.
+- How much extra memory (RAM) the algorithm uses as n grows
+
+# Key Terminologies
+
+Big-O Notation (O(...)) -	Worst-case growth rate of time or space as n increases.
+Big-Theta (Θ(...))      -	Tight bound: runtime is both upper and lower bounded by this rate.
+Big-Omega (Ω(...))      -	Best-case bound (minimum time growth).
+n                       -	Size of input. Could mean length of array, number of nodes, etc.
+k                       -	A secondary size variable (e.g., number of queries, key length).
+Worst Case              -	Slowest possible runtime for given n.
+Best Case               -	Fastest possible runtime for given n.
+Average Case            -	Expected runtime for random inputs.
+Amortized Time          -	Average time per operation over many operations (e.g., array resizing).
+Constant Factors        -	Actual numeric multipliers we ignore in asymptotic analysis (e.g., 2n ≈ n).
+Auxiliary Space         -	Extra memory used by the algorithm (not counting input storage).
+In-place Algorithm      -	Uses O(1) extra space.
+Recursive Stack Space   -	Memory used for function calls in recursion.
+Space-Time Trade-off    -	Using more memory to reduce computation time or vice versa.
+
+
+# Common Time Complexities
+
+Complexity  Name            Example
+O(1)	    Constant	    Accessing array index, hash map lookup
+O(log n)	Logarithmic	    Binary search
+O(n)	    Linear	        Single loop over array
+O(n log n)	Linearithmic	Merge sort, quicksort (average)
+O(n²)	    Quadratic	    Nested loops over the same array
+O(n³)	    Cubic	        Triple nested loops
+O(2ⁿ)	    Exponential	    Subset generation, brute-force traveling salesman
+O(n!)	    Factorial	    Permutation generation
+
+# Common Space Complexities
+
+Complexity	Example
+O(1)	    Swap two variables, iterative Fibonacci
+O(log n)	Recursion depth in binary search
+O(n)	    Storing an array copy, DFS visited set
+O(n²)	    Storing an adjacency matrix
+O(2ⁿ)	    Recursive subset storage
+
+# Big-O Notation — O(...)
+
+Meaning: The maximum amount of work or space your algorithm could need for input size n — worst-case scenario.
+Example:
+-   Linear search in an array of n elements:
+-   Worst case: The element is at the end or not present → You check all n elements.
+-   Time complexity: O(n)
+
+# Big-Omega Notation — Ω(...)
+
+Meaning: The minimum amount of work your algorithm will take — best-case scenario.
+Example:
+-   Linear search:
+-   Best case: The element is the first one you check.
+-   Time complexity: Ω(1)
+
+# Big-Theta Notation — Θ(...)
+
+Meaning: The tight bound — your algorithm takes about this much time (or space) in all cases.
+Example:
+-   Traversing an array to print every element:
+-   Always check all n elements, no matter what.
+-   Time complexity: Θ(n)
+
+# How to Analyze Time Complexity (Step-by-Step)
+
+1. Identify Input Size Variables
+    -   Usually n, sometimes multiple like n and m.
+
+2. Count Loops
+    -   Single loop → O(n)
+    -   Nested loop → multiply complexities.
+
+3. Look at Recursive Calls
+    -   Apply Master Theorem for divide-and-conquer:
+        -   T(n) = aT(n/b) + f(n)
+            → compare f(n) with n^(log_b a).
+
+4. Ignore Constants & Lower-Order Terms
+    -   O(3n + 5) → O(n)
+
+5. Check for Best / Worst / Average
+    -   Many algorithms have different complexities for each case.
+
+6. Account for Data Structures
+    -   For example, inserting in a heap is O(log n).
+
+
+# Special Notes for Interviews
+
+-   Time complexity traps: Hidden nested loops (e.g., using .includes() inside a loop is O(n²)).
+-   Space complexity traps: Recursion uses stack space even if you’re not storing extra arrays.
+-   Amortized complexity: Dynamic arrays, hash maps—O(1) average but O(n) worst case on resizing.
+-   Trade-offs: Hash map (more space, less time) vs. sorting (less space, more time).
+-   Real-world constant factors still matter for small inputs—don’t just optimize asymptotics blindly.
+
+
+
+
+
