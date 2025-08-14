@@ -145,3 +145,11 @@ console.log(map.values());         // [ 5, 10, 15 ]
 
 map.delete("banana");
 console.log(map.get("banana"));    // undefined
+
+
+
+// Frequency of an element using HashMap
+let map1 = new Map();
+for (let i of nums1) {
+  map1.set(i, (map1.get(i) || 0) + 1)
+}

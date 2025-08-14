@@ -159,3 +159,24 @@ console.log(list.toArray()); // [100, 15, 20]
 list.remove(1); // removes 15
 console.log(list.toArray()); // [100, 20]
 
+
+// Reversing a linked-list
+var reverseList = function(head) {
+    let curr = head
+    let prev = null;
+    let next;
+
+    while(curr !== null){
+        // Store next
+        next = curr.next;
+
+        // Reverse current node's next pointer
+        curr.next = prev;
+
+        // Move pointers one position ahead
+        prev = curr;
+        curr = next
+    }
+
+    return prev
+};
