@@ -31,6 +31,9 @@ while (i < array.length) {
   i++;
 }
 
+// Sum of all elements of an array
+arr.reduce((acc, n) => acc + n)
+
 // Rotating an array by k positions
 var rotate = function (nums, k) {
     /**
